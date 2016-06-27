@@ -1,0 +1,179 @@
+@model Test1_RelationalDB.Models.Testator
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        /*
+        * Nested numbered list with correct indentation.
+        *
+        * Tested on Firefox 32, Chromium 37, IE 9 and Android Browser. Doesn't work on IE 7 and previous.
+        * Source: https://gist.github.com/jirutka/32049196ab75547b7f47
+        */
+
+        ol.dyno {
+            list-style-type: none;
+            counter-reset: item;
+            margin: 0;
+            padding: 0px;
+        }
+
+        li.dyno {
+            display: table;
+            counter-increment: item;
+            margin-bottom: 0.0em;
+        }
+
+            li.dyno:before {
+                content: counters(item, ".") ". ";
+                display: table-cell;
+                padding-right: 1.6em;
+            }
+
+            li.dyno li.dyno {
+                margin: 0;
+            }
+
+                li.dyno li.dyno:before {
+                    content: counters(item, ".") " ";
+                }
+    </style>
+</head>
+</html>
+
+
+<div class="row">
+    <div class="col-xs-6 col-md-6 hidden-print">
+        <h2>Edit</h2>
+    </div>
+    <div class="col-xs-6 col-md-6 hidden-print text-right">
+        </br>
+        <button type="button" onclick=window.print() value="Print" class="btn btn-danger"> Print <span class="glyphicon glyphicon-print"></span></button>
+    </div>
+</div>
+
+
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-xs-6 col-md-6 hidden-print">
+                <h4>Testator</h4>
+                <h4>Step 1: Testator</h4>
+                @*<div class="btn-toolbar" role="toolbar" style="margin: 0;">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">1</button>
+                            <button type="button" class="btn btn-default">2</button>
+                            <button type="button" class="btn btn-default">3</button>
+                            <button type="button" class="btn btn-default">4</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">5</button>
+                            <button type="button" class="btn btn-default">6</button>
+                            <button type="button" class="btn btn-default">7</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">8</button>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+        <hr />
+
+
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MiddleName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MiddleName" class="form-control" />
+                <span asp-validation-for="MiddleName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Occupation" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Occupation" class="form-control" />
+                <span asp-validation-for="Occupation" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PostCode" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PostCode" class="form-control" />
+                <span asp-validation-for="PostCode" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="State" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="StreetName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="StreetName" class="form-control" />
+                <span asp-validation-for="StreetName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="StreetNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="StreetNumber" class="form-control" />
+                <span asp-validation-for="StreetNumber" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="StreetType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="StreetType" class="form-control" />
+                <span asp-validation-for="StreetType" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Suburb" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Suburb" class="form-control" />
+                <span asp-validation-for="Suburb" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
